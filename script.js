@@ -8,12 +8,18 @@ const computerSelection = function getComputerChoice(){
 }
 
 const playerSelection = function getManChoice(){
-    let manSelection = prompt("Enter your choice!")
-    let lManSelection = manSelection.toLowerCase()
-    checkAnswer(lManSelection)
-    return lManSelection
-   
+        let manSelection = prompt("Enter your choice!")
+        if(manSelection === ""){
+            console.log("Empty")
+        }else if(manSelection){
+            let lManSelection = manSelection.toLowerCase()
+            checkAnswer(lManSelection)
+            return lManSelection
+        }else{
+            console.log("You hit cancel")
+        }
 }
+
 const count = function(){
     console.log(manScore, compScore)
 }
