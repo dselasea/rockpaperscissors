@@ -68,38 +68,30 @@ body {
 }
 
 .game-board {
-    padding: 10rem;
-    background: url('./img/bg-triangle.svg');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 70%;
-    margin: 6rem 0;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    gap: 1rem;
 }
 
 .rock, .paper,.scissors {
-    position: absolute;
-    height: 120px;
-    width: 120px;
+    max-width: auto;
+    height: 80px;
     border-radius: 100%;
     background: white;
-    padding: 2rem;
+    padding: .5rem;
 }
 
 .rock {
-    left: 60%;
-    top: 0;
-    border: 15px solid hsl(349, 71%, 52%);
+    border: 10px solid hsl(349, 71%, 52%);
 }
 
 .paper {
-    left: 0;
-    top: 0;
-    border: 15px solid hsl(230, 89%, 62%);
+    border: 10px solid hsl(230, 89%, 62%);
 }
 
 .scissors {
-    bottom: 0;
-    left: 30%;
-    border: 15px solid hsl(39, 89%, 49%);
+    border: 10px solid hsl(39, 89%, 49%);
 }
