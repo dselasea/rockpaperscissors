@@ -1,6 +1,8 @@
 let compScore = 0
 let manScore = 0
 
+// Calls game function to play 5 rounds of rock paper scissors
+
 game()
 
 function game(){
