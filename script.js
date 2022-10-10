@@ -1,12 +1,18 @@
 let compScore = 0
 let manScore = 0
 
+/*==============================================
+    This function generates computer choice
+==============================================*/
 const computerSelection = function getComputerChoice(){
     const choices = ["rock", "paper", "scissors"]
     const compChoice = Math.floor(Math.random() * 3)
     return choices[compChoice]
 }
 
+/*==============================================
+    This function asks user to select choice
+==============================================*/
 const playerSelection = function getManChoice(){
         let manSelection = prompt("Enter your choice!")
         if(manSelection === ""){
@@ -20,10 +26,17 @@ const playerSelection = function getManChoice(){
         }
 }
 
+/*==============================================
+    This function prints the scores
+==============================================*/
 const count = function(){
     console.log(manScore, compScore)
 }
 
+
+/*==============================================
+    This function detects who has won the game
+==============================================*/
 function playRound(playerSelection, computerSelection){
     if(playerSelection == "rock" && computerSelection == "scissors"){
         console.log(`You win!, ${playerSelection} beats ${computerSelection}`)
@@ -60,15 +73,21 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
+/*==============================================
+    This function allows player to play five rounds of rock paper scissors
+==============================================*/
 function game(){
     for(let i = 0; i < 5; i++){
         playRound(playerSelection(), computerSelection())
     }
 }
 
+/*==============================================
+    This function checks if use has selected rock paper or scissors
+==============================================*/
 function checkAnswer(manAnswer){
     if(manAnswer !== "rock"  && manAnswer !=="paper" && manAnswer !== "scissors"){
-        console.log("Wrong input!")
+        console.log("Wrong input! Please type ROCK, PAPER, or SCISSORS")
     }
 }
 
