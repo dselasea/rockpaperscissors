@@ -91,4 +91,4 @@ function checkAnswer(manAnswer){
     }
 }
 
-game()
+// game()
