@@ -41,13 +41,27 @@ body {
     height: 60px;
 }
 
+.btn {
+    padding: .7rem 1rem;
+    margin: .5rem 0;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+}
+
 .score-board {
     display: flex;
     justify-content: space-between;
-    border: 3px solid hsl(217, 16%, 45%);
     padding: .5rem;
     border-radius: 5px;
     align-items: center;
+}
+
+.announcer {
+    border: 3px solid hsl(217, 16%, 45%);
+    text-align: center;
+    color: #fff;
+    display: none;
 }
 
 .score {
@@ -63,8 +77,8 @@ body {
     font-weght: 700;
 }
 
-#score {
-    font-size: 1.5rem;
+#score, #cscore {
+    font-size: 1.3rem;
 }
 
 .game-board {
