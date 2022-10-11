@@ -1,5 +1,10 @@
+const playerChoice = document.querySelectorAll(".game-board_player button")
+const computerChoice = document.querySelector(".game-board_computer button")
+const score = document.querySelector("#score")
+
 let compScore = 0
 let manScore = 0
+let playerSelection;
 
 /*==============================================
     This function generates computer choice
@@ -7,24 +12,37 @@ let manScore = 0
 const computerSelection = function getComputerChoice(){
     const choices = ["rock", "paper", "scissors"]
     const compChoice = Math.floor(Math.random() * 3)
+    computerChoice.innerHTML = `<img class=${choices[compChoice]} src="./img/icon-${choices[compChoice]}.svg" alt="">`
     return choices[compChoice]
 }
+
+
+playerChoice.forEach(choice => {
+    choice.addEventListener("click", () => {
+        playerSelection = choice.id
+        playRound(playerSelection, computerSelection())
+    })
+})
+
+score.textContent = manScore
+
+
 
 /*==============================================
     This function asks user to select choice
 ==============================================*/
-const playerSelection = function getManChoice(){
-        let manSelection = prompt("Enter your choice!")
-        if(manSelection === ""){
-            console.log("Empty")
-        }else if(manSelection){
-            let lManSelection = manSelection.toLowerCase()
-            checkAnswer(lManSelection)
-            return lManSelection
-        }else{
-            console.log("You hit cancel")
-        }
-}
+// const playerSelection = function getManChoice(){
+//         let manSelection = prompt("Enter your choice!")
+//         if(manSelection === ""){
+//             console.log("Empty")
+//         }else if(manSelection){
+//             let lManSelection = manSelection.toLowerCase()
+//             checkAnswer(lManSelection)
+//             return lManSelection
+//         }else{
+//             console.log("You hit cancel")
+//         }
+// }
 
 /*==============================================
     This function prints the scores
@@ -73,22 +91,3 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-/*==============================================
-    This function allows player to play five rounds of rock paper scissors
-==============================================*/
-function game(){
-    for(let i = 0; i < 5; i++){
-        playRound(playerSelection(), computerSelection())
-    }
-}
-
-/*==============================================
-    This function checks if use has selected rock paper or scissors
-==============================================*/
-function checkAnswer(manAnswer){
-    if(manAnswer !== "rock"  && manAnswer !=="paper" && manAnswer !== "scissors"){
-        console.log("Wrong input! Please type ROCK, PAPER, or SCISSORS")
-    }
-}
-
-// game()

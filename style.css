@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 
-::root {
+:root {
     --Scissors-Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
     --Paper-Gradient: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
     --Rock-Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
@@ -74,6 +74,16 @@ body {
     align-items: center;
     margin: 5rem 0;
     gap: 1rem;
+    color: #fff;
+}
+
+.game-board_player button, .game-board_computer button {
+    border-radius: 100%;
+}
+
+.game-board_player button:hover, 
+.game-board_computer button:hover {
+    cursor: pointer;
 }
 
 .rock, .paper,.scissors {
