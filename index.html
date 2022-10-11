@@ -5,15 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
     
 </head>
 <body>
-    <div class="one">
-        <div class="two">
-            <div class="three">
-
+    <div class="container">
+        <!-- Score Board -->
+        <div class="score-board">
+            <div class="score-text">
+                <img src="/img/logo.svg" alt="">
             </div>
+            <div class="score">
+                <p>SCORE</p>
+                <h3>You: <span id="score">0</span></h3>
+                <h3>AI: <span id="cscore">0</span></h3>
+            </div>
+        </div>
+
+        <!-- Game Board -->
+        <div class="game-board">
+            <h3>Player 1 Choose</h3>
+            <div class="game-board_player">
+                <button id="rock"><img class="rock" src="./img/icon-rock.svg" alt=""></button>
+                <button id="paper"><img class="paper" src="./img/icon-paper.svg" alt=""></button>
+                <button id="scissors"><img class="scissors" src="./img/icon-scissors.svg" alt=""></button>
+            </div>
+            <div class="game-board_computer">
+                <h3>Computer Choice</h3>
+                <button><img class="rock" src="./img/icon-rock.svg" alt=""></button>
+            </div>
+        </div>
+
+        <div class="announcer">
+            <h3>Winner</h3>
+            <button id="play-again" class="btn">Play Again!</button>
         </div>
     </div>
    

@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --Scissors-Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
+    --Paper-Gradient: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
+    --Rock-Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
+    --Lizard-Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+    --Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+
+/* ### Neutral */
+
+    --Dark-Text: hsl(229, 25%, 31%);
+    --Score-Text: hsl(229, 64%, 46%);
+    --Header-Outline: hsl(217, 16%, 45%);
+
+/* ### Background */
+    --background: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 2rem;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.score-text img {
+    max-width: 100%;
+    height: 60px;
+}
+
+.btn {
+    padding: .7rem 1rem;
+    margin: .5rem 0;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.announcer {
+    border: 3px solid hsl(217, 16%, 45%);
+    text-align: center;
+    color: #fff;
+    /* display: none; */
+}
+
+.score {
+    text-align: center;
+    color: hsl(229, 25%, 31%);
+    background: #fff;
+    padding: .7rem 1rem;
+    border-radius: 5px;
+}
+
+.score p {
+    font-size: .8rem;
+    font-weght: 700;
+}
+
+#score, #cscore {
+    font-size: 1.3rem;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0;
+    gap: 1rem;
+    color: #fff;
+}
+
+.game-board_player button, .game-board_computer button {
+    border-radius: 100%;
+}
+
+.game-board_player button:hover, 
+.game-board_computer button:hover {
+    cursor: pointer;
+}
+
+.rock, .paper,.scissors {
+    max-width: 100%;
+    height: 100px;
+    border-radius: 100%;
+    background: white;
+    padding: .5rem;
+}
+
+.rock {
+    border: 10px solid hsl(349, 71%, 52%);
+}
+
+.paper {
+    border: 10px solid hsl(230, 89%, 62%);
+}
+
+.scissors {
+    border: 10px solid hsl(39, 89%, 49%);
+}
+
+.game-board_computer {
+    text-align: center;
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 760px){
+    .game-board_player {
+        display: flex;
+        gap: 2rem;
+    }
+}
