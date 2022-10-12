@@ -49,12 +49,19 @@ const disableButton = function(){
     })
 }
 
+const enableButton = function(){
+    playerChoice.forEach(choice => {
+        choice.disabled = false
+    })
+}
+
 function playAgain(){
     announcer.style.display = "none"
     compScore = 0
     manScore = 0
     score.textContent = "0"
     cscore.textContent = "0"
+    enableButton()
 }
 
 
