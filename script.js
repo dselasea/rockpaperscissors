@@ -3,6 +3,7 @@ const computerChoice = document.querySelector(".game-board_computer button")
 const score = document.querySelector("#score")
 const cscore = document.querySelector("#cscore")
 const announcer = document.querySelector(".announcer")
+const announcerScore = document.querySelector("#announcer-score")
 const play = document.querySelector("#play-again")
 
 let compScore = 0
@@ -31,14 +32,22 @@ const scoreToFive = function(){
     if(manScore == 5){
         announcer.style.display = "block"
         announcer.firstElementChild.textContent = "You Win!"
+        disableButton()
     }
     if(compScore == 5){
         announcer.style.display = "block"
         announcer.firstElementChild.textContent = "Computer Wins!"
+        disableButton()
     }
 }
 
 play.addEventListener("click", playAgain)
+
+const disableButton = function(){
+    playerChoice.forEach(choice => {
+        choice.disabled = true
+    })
+}
 
 function playAgain(){
     announcer.style.display = "none"
@@ -54,31 +63,31 @@ function playAgain(){
 ==============================================*/
 function playRound(playerSelection, computerSelection){
     if(playerSelection == "rock" && computerSelection == "scissors"){
-        console.log(`You win!, ${playerSelection} beats ${computerSelection}`)
+        announcerScore.innerText = `You win!, ${playerSelection} beats ${computerSelection}`
         manScore++ 
     }
     if(playerSelection == "scissors" && computerSelection == "rock"){
-        console.log(`You lose!, ${computerSelection} beats ${playerSelection}`)
+        announcerScore.innerText = `You lose!, ${computerSelection} beats ${playerSelection}`
         compScore++
     }
     if(playerSelection == "paper" && computerSelection == "rock"){
-        console.log(`You win!, ${playerSelection} beats ${computerSelection}`)
+        announcerScore.innerText = `You win!, ${playerSelection} beats ${computerSelection}`
         manScore++
     }
     if(playerSelection == "rock" && computerSelection == "paper"){
-        console.log(`You lose!, ${computerSelection} beats ${playerSelection}`)
+        announcerScore.innerText = `You lose!, ${computerSelection} beats ${playerSelection}`
         compScore++
     }
     if(playerSelection == "scissors" && computerSelection == "paper"){
-        console.log(`You win!, ${playerSelection} beats ${computerSelection}`)
+        announcerScore.innerText = `You win!, ${playerSelection} beats ${computerSelection}`
         manScore++
     }
     if(playerSelection == "paper" && computerSelection == "scissors"){
-        console.log(`You lose!, ${computerSelection} beats ${playerSelection}`)
+        announcerScore.innerText = `You lose!, ${computerSelection} beats ${playerSelection}`
         compScore++
     }
     if(playerSelection == computerSelection){
-        console.log("It's a tie!")
+        announcerScore.innerText = "It's a tie!"
     }
 }
 
